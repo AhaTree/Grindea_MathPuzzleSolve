@@ -63,6 +63,8 @@ def make_str2(equation, rest_num, rest_op):
             equation += num
             rest_num.remove(num)
             make_str2(equation, rest_num, rest_op)
+            equation = ""
+            rest_num.append(num)
     else:
         for op in rest_op.copy():
             for num in rest_num.copy():
