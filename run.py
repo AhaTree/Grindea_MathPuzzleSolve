@@ -1,10 +1,11 @@
-''''
-modify "nums", "ops" and "target" here:
-'''
-nums = [7,9,5,1,7]
-ops = ["*","+","*","-"]
-target = 1
 
+####### modify "nums", "ops" and "target" here:#########
+nums = [8,7,6,3,4] # <- change here 
+ops = ["+","+","*","+"] # <- change here 
+target = 160 # <- change here
+
+
+########### Don't touch the rest, just run##############
 
 
 nums = [str(x) for x in nums]
@@ -25,6 +26,10 @@ def make_str(equation, num_flag, op_flag):
             equation += nums[i]
             num_flag[i] = 1
             make_str(equation, num_flag, op_flag)
+            equation = ""
+            num_flag[i] = 0
+
+
     else:
         for i in range(len(ops)):
             if op_flag[i] == 1:
